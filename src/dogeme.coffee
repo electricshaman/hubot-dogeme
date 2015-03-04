@@ -22,7 +22,7 @@ module.exports = (robot) ->
         msg.send JSON.parse(body).doge
 
   robot.respond /doge bomb( (\d+))?/i, (msg) ->
-		limit = 5
+    limit = 5
     count = msg.match[2] || limit
     msg.http("http://dogeme.rowanmanning.com/bomb?count=" + Math.min(count, limit))
       .get() (err, res, body) ->
